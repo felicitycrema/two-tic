@@ -1,11 +1,22 @@
+import React, { useContext } from "react";
+import Router from "./Router";
+import { GlobalStyles } from "./styles/Global.styled";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./styles/theme";
+import { ThemeContext } from "./context/ThemeContext";
 
-import './App.css';
 
 function App() {
+
+  const {theme} = useContext(ThemeContext)
+  const mode = (theme === "light" ? lightTheme : darkTheme);
+  console.log(theme);
   return (
-    <div className="App">
-      <h1>Tic-Tac-Toe here I come
-      </h1>
+    <div>
+      <ThemeProvider theme={mode}>
+        <GlobalStyles />
+        <Router />
+      </ThemeProvider>
     </div>
   );
 }
