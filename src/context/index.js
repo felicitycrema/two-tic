@@ -1,17 +1,15 @@
-import React from 'react';
+import React from "react";
 import { ThemeContextProvider } from "./ThemeContext";
-import { GameContextProvider } from './GameContext';
-// import { ModalContextProvider } from './ModalContext';
-function Provider ({ children }) {
+import { GameContextProvider } from "./GameContext";
+
+function Provider({ children }) {
   return (
     <ThemeContextProvider>
       <GameContextProvider>
-        {/* <ModalContextProvider> */}
-          {children}
-          {/* </ModalContextProvider> */}
-      </GameContextProvider>
-      </ThemeContextProvider>
+        {children}
+        </GameContextProvider>
+    </ThemeContextProvider>
   );
 }
 
-export default Provider
+export default Provider;
