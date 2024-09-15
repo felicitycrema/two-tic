@@ -13,7 +13,7 @@ export const ModalBackdrop = styled.div`
 `
 
 export const ModalContainer = styled.div`
-    max-width: 400px;
+    min-width: 400px;
     margin: 0 auto;
     padding: 40px 20px;
     background: white;   
@@ -23,6 +23,11 @@ export const ModalContainer = styled.div`
     align-items: center;
     justify-content: space-between;  
     background-color: ${(props) => props.theme.colors.secondary};  
+
+    ${(props) => props.theme.media.mobile} {
+      flex-direction: 200;
+      padding: 20px 10px;
+  }
 `;
 
 export const ModalHeader = styled.div`

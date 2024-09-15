@@ -1,12 +1,30 @@
 import styled from "styled-components";
 
 export const PlayerWrapper = styled.div`
-      display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 50px;
-            background-color: #f5f5f5;
-            color: #333;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 6rem;
 
+  ${(props) => props.theme.media.mobile} {
+    flex-direction: row;
+    margin: 4rem;
+  }
+`;
+
+export const AvatarWrapper = styled.div`
+  div {
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    filter: ${(props) => (props.isPlayerActive ? "" : "grayscale(90%)")};
+
+    ${(props) => props.theme.media.mobile} {
+      flex-direction: row;
+      /* align-items:center; */
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+`;
