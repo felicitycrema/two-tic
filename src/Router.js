@@ -4,27 +4,10 @@ import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import Game from "./Pages/Game/Game";
 import Header from "./components/Header/Header";
-import { ModalContext } from "./context/ModalContext";
-
-// export const Test = ({ handleModal }) => {
-//   return (
-//     <div>
-//       <button onClick={() => handleModal(<Modal handleModal={handleModal} />)}>
-//       Show Modal
-//       </button>
-//     </div>
-//   );
-// };
-// export const Modal = ({ handleModal }) => {
-//   return (
-//     <div>
-//       savshdfvshjfadhgfjhde
-//     </div>
-//   );
-// };
+// import { ModalContext } from "./context/ModalContext";
 
 function Router(){
-  const { handleModal } = useContext(ModalContext);
+  // const { handleModal } = useContext(ModalContext);
 
   return (
     <BrowserRouter> 
