@@ -36,22 +36,24 @@ export const ModalHeader = styled.div`
   text-align: center;
   text-align: center;
   border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  background-color: ${(props) => props.theme.colors.text}; 
 `;
 
 export const ModalBody = styled.div`
   background-color: #fff;
   padding: 24px;
   text-align: center;
+  background-color: ${(props) => props.theme.colors.text}; 
 `;
 
 export const ModalFooter = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   align-items: center;
-  border-radius: 24px;
+  border-radius: 4px;
 `;
 
 export const Title = styled.h1`
@@ -65,22 +67,3 @@ export const Subtitle = styled.h2`
 `;
 
 
-
-
-// export const ModalHeader = styled.div`
-//     display: flex;
-//     justify-content: Center;    
-// `;
-// export const ModalBody = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: Center; 
-//     margin: 1rem;   
-// `;
-// export const ModalFooter = styled.div`
-//     display: flex;
-//     justify-content: Center;    
-// `;
-
-// Styled components for the modal

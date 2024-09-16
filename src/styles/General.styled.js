@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: ${(props) => props.columnBased ? "column" : "row"};
+  flex-direction: ${(props) => (props.columnBased ? "column" : "row")};
   height: 80vh;
   width: 100vw;
   background-color: ${(props) => props.theme.colors.primary};
@@ -19,27 +19,29 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-    color: ${(props) => props.primary ? props.theme.colors.secondary : props.theme.colors.text};
-    font-size: 4rem;
-    font-family: "Pacifico", cursive;	
-    background-color: transparent;
+  color: ${(props) =>
+    props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
+  font-size: 4rem;
+  font-family: "Pacifico", cursive;
+  background-color: transparent;
 
-    ${(props) => props.theme.media.mobile} {
+  ${(props) => props.theme.media.mobile} {
     font-size: 5rem;
   }
-`
+`;
 
 export const Subtitle = styled.h1`
-    color: ${(props) => props.primary ? props.theme.colors.secondary : props.theme.colors.text};
-    font-size: 1.5rem;
-    background-color: transparent;
-    padding:10px;
-`
+  color: ${(props) =>
+    props.primary ? props.theme.colors.primary : props.theme.colors.secondary};
+  font-size: 1.5rem;
+  font-weight: 200;
+  background-color: transparent;
+  padding: 10px;
+`;
 export const Text = styled.p`
-    color: ${(props) => props.primary ? props.theme.colors.secondary : props.theme.colors.text};
-    font-size: 1.2rem;
-    /* font-family: "Poppins", sans-serif;	 */
-    /* font-weight: 200; */
-    background-color: transparent;
-    padding:10px;
-`
+  color: ${(props) =>
+    props.primary ? props.theme.colors.secondary : props.theme.colors.text};
+  font-size: 1.2rem;
+  background-color: transparent;
+  padding: 10px;
+`;
