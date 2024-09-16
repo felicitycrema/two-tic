@@ -8,7 +8,7 @@ const useSound = (url, options) => {
     audio.load()
     audio.volume = options.volume
     setSound(audio)
-  }, []);
+  }, [options.volume, url]);
 
   return () => {
     if (sound) {
