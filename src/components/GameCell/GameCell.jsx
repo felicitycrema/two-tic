@@ -8,12 +8,15 @@ import { ReactComponent as IconX } from "../../assets/svgs/icon-x.svg";
 import { ReactComponent as OIconOutline } from "../../assets/svgs/icon-o.svg";
 import { ReactComponent as XIconOutline } from "../../assets/svgs/icon-x.svg";
 import { ReactComponent as IconO } from "../../assets/svgs/icon-o.svg";
+import { SfxContext } from "../../context/SfxContext";
 
 function GameCell({ cellItem, index }) {
   const { updateBoard, game, roundComplete } = useContext(GameContext);
+  const { hoverSfx, clickSfx, winSfx, completeSfx } = useContext(SfxContext);
   const { handleModal} = useContext(ModalContext);
 
   const cellClickHandler = () => {
+    clickSfx();
     updateBoard(index);
     // if (checkForWinner(game.board)){
     //  handleModal(<RoundOverModal />)
@@ -21,7 +24,12 @@ function GameCell({ cellItem, index }) {
     
     const result = checkForWinner(game.board)
     if (result) {
-      roundComplete(result);
+      roundComplete(result)
+      if(result !== "draw") {
+        winSfx();
+      } else {
+        completeSfx();
+      }
          handleModal(<RoundOverModal />)
     }
   };
@@ -41,7 +49,7 @@ function GameCell({ cellItem, index }) {
   }
 
   return (
-    <CellStyle onClick={cellClickHandler}>
+    <CellStyle onClick={cellClickHandler} onMouseEnter={() =>hoverSfx()}>
         {game.turn === "x" ? (
          <XIconOutline className="outlineIcon"/> 
         ) : ( 
