@@ -18,7 +18,7 @@ function Game() {
             key={index}
             cellItem={item}
             index={index}
-            isWInningCell={game.winningCombo.includes(index)}
+            isWinningCell={game.winningCombo.includes(index)}
           />
         ))}
       </GameBoardStyle>

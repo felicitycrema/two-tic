@@ -1,16 +1,18 @@
 import React from "react";
 import { PlayerWrapper, AvatarWrapper } from "./Player.styled";
-import Avatar from "react-nice-avatar";
+import Avatar, { genConfig} from "react-nice-avatar";
 // import Avatar, { genConfig } from "react-nice-avatar";
 // import { Text } from "../../styles/General.styled";
-import { Subtitle } from "../Modal/Modal.styled";
+// import { Subtitle } from "../Modal/Modal.styled";
+import { Subtitle } from "../../styles/General.styled";
 function Player({ player, isPlayerActive }) {
-  // const myConfig = genConfig();
+  const myConfig = genConfig();
 
   return (
     <PlayerWrapper>
       <AvatarWrapper isPlayerActive={isPlayerActive ?? false}>
-        <Avatar {...player.avatarConfig} />
+        <Avatar {...myConfig } />
+        {/* <Avatar {...player.avatarConfig} /> */}
       </AvatarWrapper>
 
       <Subtitle>
