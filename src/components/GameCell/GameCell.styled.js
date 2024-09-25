@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CellStyle = styled.button `
+export const CellStyle = styled.button`
   background-color: ${(props) =>
     props.isWinningCell
       ? props.theme.colors.yellow
